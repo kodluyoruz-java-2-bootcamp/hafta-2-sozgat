@@ -10,8 +10,41 @@ package org.kodluyoruz;
  *
  * TODO Bu 2 özellik ve bunların metotları için gereken kodları bu sınıfın içine yazın
  */
-public class RAM
+public class RAM extends Hardware
 {
+    private int memory;
+    private int frequency;
+
+    public int getMemory() {
+        return memory;
+    }
+
+    public void setMemory(int memory) {
+        this.memory = memory;
+    }
+
+    public int getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(int frequency) {
+        this.frequency = frequency;
+    }
+
+    @Override
+    void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    @Override
+    void setPower(int power) {
+        this.power = power;
+    }
+
+    @Override
+    void setPrice(double price) {
+        this.price = price;
+    }
 
     /*
      * Eğer RAM'in hafızası 16 GB'tan fazlaysa, her 4 GB için fiyatı 100 TL artar.
@@ -19,4 +52,19 @@ public class RAM
      * TODO buna göre Hardware sınıfındaki fiyat hesaplayan metodu bu sınıfta yeniden yazın
      */
 
+    @Override
+    double calculatePrice(double price) {
+        double newPrice = price;
+        if (getMemory()>16){
+            for (int i = 16; i < getMemory() ; i+=4) {
+                newPrice+=100;
+            }
+        }
+        if (getFrequency()>3600){
+            for (int i = 0; i < getFrequency(); i+=400) {
+                newPrice+=200;
+            }
+        }
+        return newPrice;
+    }
 }
