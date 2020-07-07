@@ -50,13 +50,14 @@ public class CPU extends Hardware
      */
 
     @Override
-    double calculatePrice(double price) {
+    double calculatePrice() {
+        double newPrice = this.price;
         if (getCores() >= 6 ){
-            double newPrice = price*130/100;
+            newPrice = newPrice*130/100;
             return newPrice;
         }
         else{
-            return price;
+            return newPrice;
         }
     }
 }

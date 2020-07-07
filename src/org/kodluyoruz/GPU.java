@@ -53,8 +53,8 @@ public class GPU extends Hardware
      */
 
     @Override
-    double calculatePrice(double price) {
-        double newPrice = price;
+    double calculatePrice() {
+        double newPrice = this.price;
         if (getMemory()>8){
             for (int i = 8; i <  getMemory(); i+=2) {
                 newPrice+=250;

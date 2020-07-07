@@ -22,7 +22,7 @@ public abstract class Hardware
 
     abstract void setPower(int power);
 
-    abstract double calculatePrice(double price);
+    abstract double calculatePrice();
 
 
 }

@@ -42,8 +42,8 @@ public class SSD extends Hardware
      */
 
     @Override
-    double calculatePrice(double price) {
-        double newPrice = price;
+    double calculatePrice() {
+        double newPrice = this.price;
         if (getMemory()>750){
             for (int i = 750; i < getMemory() && getMemory() - i > 250 ; i+=250) {
                 newPrice+=275;

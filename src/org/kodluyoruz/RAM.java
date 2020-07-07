@@ -53,8 +53,8 @@ public class RAM extends Hardware
      */
 
     @Override
-    double calculatePrice(double price) {
-        double newPrice = price;
+    double calculatePrice() {
+        double newPrice = this.price;
         if (getMemory()>16){
             for (int i = 16; i < getMemory() ; i+=4) {
                 newPrice+=100;

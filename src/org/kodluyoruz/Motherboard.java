@@ -63,8 +63,8 @@ public class Motherboard extends Hardware
      */
 
     @Override
-    double calculatePrice(double price) {
-        double newPrice = price;
+    double calculatePrice() {
+        double newPrice = this.price;
         if (isWifiIncluded()){
             newPrice = newPrice + 250;
         }
